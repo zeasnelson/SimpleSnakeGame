@@ -1,0 +1,78 @@
+
+body {
+    background-color: #61656b;
+}
+
+
+
+.slidecontainer {
+    width: 100%;
+}
+
+
+.top {
+    background-color: #535559;
+}
+
+
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+
+
+}
+
+
+#gridBg {
+    display: inline-block;
+    min-width: 425px;
+    background-color: black;
+    padding: 1px 2px 2px 1px;
+}
+
+
+
+
+#walls {
+    display: inline-block;
+    background-color: red;
+    padding: 4px;
+    min-width: 430px;
+}
+
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: black;
+    cursor: pointer;
+}
+
+
+.topLables {
+    font-size: 4rem;
+}
+
+
+#snakeLength, #meters {
+    font-size: 4rem;
+}
+
+#matrix {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#gameMode {
+	font-size: 20px;
+}

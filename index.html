@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mycss.css">
+    <meta charset="utf-8">
+    <title> Pixel Snake </title>
+    <script src="Grid.js">  </script>
+    <script src="LinkedList.js">  </script>
+    <script src="Snake.js">  </script>
+    <script src="GameOver.js">  </script>
+    <script src="GameControlls.js">  </script>
+    <script src="Game.js">  </script>
+  </head>
+
+  <body onload = "setup();">
+
+      <div class="container-fluid text-white">
+
+
+          <!--Speed and snake size labels section-->
+          <div class="row pb-1 top ">
+              <div class="col-5 text-right ">
+                  <div class="d-inline topLables" id="speedText"></div>
+                  <div class="d-inline">%</div>
+                  <div><span class="badge badge-secondary">Speed</span></div>
+
+              </div>
+              <div class="col-2">
+              </div>
+
+              <div class="col-5 text-left">
+                  <div class="d-inline topLables" id="sizeText">3</div>
+                  <div class="d-inline">px</div>
+                  <div><span class="badge badge-secondary">snake size</span></div>
+              </div>
+
+          </div>
+
+
+
+          <!--Range Slider-->
+          <div class="row text-center top">
+              <!--speed range slider-->
+              <div class="col-12">
+                  <div class="slidecontainer">
+                     <div ><input type="range" min="1" max="100" value="1" class="slider" id="speedRange"
+                      onchange="grid.speedAdjaster()" oninput="grid.updateSpeedCount()"></div>
+                      <div><span class="badge badge-secondary m-1">Speed Controll</span></div>
+                  </div>
+              </div>
+
+          </div>
+
+
+
+
+          <!--buttons area-->
+          <div class="row text-center top">
+              <div class="col-12 ">
+                  <div>
+                      <button onclick="newGame()" type="button" class="btn mr-5 btn-outline-light">New Game</button>
+                      <button onclick="phaseOnOff()" type="button" id="cage-state" class="btn m-1 btn-outline-light">Disable phasing</button>
+                      <button onclick="setAutoSpeed()" type="button" id="auto-speed" class="btn m-1 btn-outline-light">Auto speed OFF</button>
+                      <button onclick="grid.togleGridOnOff()" type="button" class="btn ml-3 btn-outline-light">Remove Grid</button>
+
+                  </div>
+              </div>
+          </div>
+
+
+
+
+
+
+          <!--Grid section-->
+          <div class="row p-1 text-center " style="background-color: #61656b">
+               <!-- Instructions container-->
+              <!-- <div class="col-12 order-3 col-md-6 order-md-2  col-lg-4 order-lg-1">
+                  <div class="p-3" >
+                      <p style="font-size: 2rem;">GAME MODES </p>
+                      <p><b id="gameMode">Automatic Speed</b> will gradually increase the snake's speed based on how much it eats</p>
+                      <p><b id="gameMode">Manual Speed</b> The player can control the snake's speed with the slider at the top</p>
+                      <p>Automatic speed mode disables all controls untill a new game is started</p>
+                      <p>Manual speed mode allows the user to change the speed at any time by pausing the game</p>
+                      <p><b>"Phasing"</b> allows the snake to go through walls like the flash </p>
+                  </div>
+              </div> -->
+
+               <!-- Grid container -->
+              <!-- <div  class="col-12 order-1  col-md-12 order-md-1 col-lg-8 order-lg-2"> -->
+              <div class="col-12">    <!-- uncomment this line-->
+                  <div id="walls" style="background-color: #61656b">
+                      <div id="gridBg">
+                          <div id="grid">
+                           <!-- This is where the button matrix will be -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+               <!-- controlls container -->
+              <!-- <div class="col-12 order-2  col-md-6 order-md-2  col-lg-4 order-lg-3">
+                  <div class="mx-auto d-block p-4 controlls" style="max-width: 400px;">
+                      <img class="w-100" src="images/controlls.png">
+                  </div>
+              </div> -->
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-12 order-2  col-md-6 order-md-2  col-lg-4 order-lg-3 text-center justify-conte">
+                <div class="row bg-dark p-2 ">
+                  <div class="col-12" onclick="setDirection(38)" >
+                    up
+                  </div>
+                </div>
+
+                <div class="row bg-dark p-2">
+                  <div class="col-4" onclick="setDirection(37)" >
+                    left
+                  </div>
+                  <div class="col-4"  onclick="setDirection(40)" >
+                    down
+                  </div>
+                  <div class="col-4" onclick="setDirection(39)"  >
+                    right
+                  </div>
+                </div>
+
+
+                <div class="row bg-dark p-2"  >
+                  <div class="col-12" onclick="setDirection(32)">
+                    pause
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+      </div>
+
+  </body>
+</html>
